@@ -1,0 +1,267 @@
+
+/* 
+   - Mengatur ulang style bawaan browser dan menetapkan gaya dasar.
+    */
+
+/* Reset dasar untuk semua elemen */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Membuat kalkulasi ukuran box lebih mudah */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font yang bersih dan mudah dibaca */
+    line-height: 1.6;
+    background-color: #f4f7f6; /* Warna latar sedikit abu-abu, menenangkan */
+    color: #333; /* Warna teks utama */
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px; /* Lebar maksimum konten */
+    margin: auto; /* Agar konten selalu di tengah */
+    overflow: hidden; /* Menghindari elemen keluar dari container */
+    padding: 0 20px;
+}
+
+/* 
+   2. HEADER & FOOTER STYLES
+   - Gaya untuk bagian Header dan Footer yang konsisten di semua halaman.
+    */
+
+header {
+    background: #ffffff;
+    padding: 1rem 0;
+    border-bottom: 1px solid #e0e0e0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    position: sticky; /* Membuat header tetap di atas saat scroll */
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between; /* Logo di kiri, nav di kanan */
+    align-items: center;
+}
+
+header .logo {
+    color: #d9534f; /* Warna merah darurat yang tidak terlalu terang */
+    font-weight: bold;
+    font-size: 1.8rem;
+}
+
+header nav ul {
+    list-style: none; /* Menghilangkan titik-titik list */
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 25px;
+}
+
+header nav ul li a {
+    text-decoration: none; /* Menghilangkan garis bawah link */
+    color: #555;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s; /* Efek transisi halus */
+}
+
+/* Efek Hover untuk menu navigasi */
+header nav ul li a:hover {
+    background-color: #f4f7f6;
+    color: #d9534f;
+}
+
+/* Gaya untuk menu yang sedang aktif */
+header nav ul li a.active {
+    background-color: #d9534f;
+    color: #ffffff;
+}
+
+footer {
+    background: #333;
+    color: #ffffff;
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 40px; /* Memberi jarak dari konten utama */
+}
+
+
+/* 
+   3. HALAMAN UTAMA (index.html) STYLES
+    */
+
+.hero {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.emergency-buttons {
+    display: grid;
+    /* Membuat 2 kolom di layar desktop, dan 1 kolom di layar kecil */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px; /* Jarak antar tombol */
+    margin-top: 20px;
+}
+
+.button-item {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 25px;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+    transition: transform 0.2s, box-shadow 0.2s; /* Efek transisi */
+}
+
+/* Efek Hover untuk tombol darurat */
+.button-item:hover {
+    transform: translateY(-5px); /* Tombol sedikit terangkat */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+}
+
+.button-item img {
+    width: 64px; /* Ukuran ikon */
+    height: 64px;
+    margin-bottom: 15px;
+}
+
+.button-item .button-label {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.button-item .button-number {
+    display: block;
+    font-size: 1.5rem;
+    color: #d9534f;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+
+/* 
+   4. HALAMAN DIREKTORI (about.html) STYLES
+    */
+
+.page-description {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.directory-table table {
+    width: 100%;
+    border-collapse: collapse; /* Menghilangkan jarak antar border */
+    margin-top: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+}
+
+.directory-table th, .directory-table td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.directory-table thead {
+    background-color: #d9534f;
+    color: #ffffff;
+    font-size: 1.1rem;
+}
+
+.directory-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /* Efek zebra pada tabel agar mudah dibaca */
+}
+
+.table-spacer {
+    margin-top: 40px;
+}
+
+/* 
+   5. HALAMAN PANDUAN & KONTAK (contact.html) STYLES
+    */
+
+.guide-section, .contact-form-section {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    margin-top: 40px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+}
+
+.guide-section ol {
+    padding-left: 20px; /* Memberi ruang untuk nomor list */
+}
+
+.guide-section ol li {
+    margin-bottom: 15px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.submit-button {
+    display: inline-block;
+    background-color: #d9534f;
+    color: #ffffff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #c9302c; /* Warna sedikit lebih gelap saat disentuh */
+}
+
+/* 
+   6. RESPONSIVE DESIGN
+   - Penyesuaian untuk layar yang lebih kecil seperti tablet dan HP.
+    */
+
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column; /* Logo dan Navigasi menjadi vertikal */
+    }
+
+    header nav {
+        margin-top: 15px;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .directory-table th, .directory-table td {
+        padding: 10px;
+        font-size: 0.9rem; /* Mengecilkan font di tabel agar muat */
+    }
+}
